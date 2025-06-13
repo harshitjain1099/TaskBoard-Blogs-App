@@ -61,6 +61,7 @@ async def search_blogs(
                 blogs = (
                     db.query(Blog)
                     .filter(Blog.title.ilike(f"%{query.strip()}%"))
+                    .filter(Blog.published == True)
                     .limit(50)
                     .all()
                 )
@@ -68,6 +69,7 @@ async def search_blogs(
                 blogs = (
                     db.query(Blog)
                     .filter(Blog.title.ilike(f"%{query.strip()}%"))
+                    .filter(Blog.published == True)
                     .limit(50)
                     .all()
                 )
@@ -98,5 +100,5 @@ async def search_blogs(
 # Search endpoint
 @router.get("/search")
 def search_blogs(db:db_dependency, query: str):
-    blogs = db.query(Blog).filter(Blog.title.ilike(f"%{query}%")).all()
+    blogs = db.query(Blog).filter(Blog.title.ilike(f"%{query}%")).filter(Blog.published == True).all()
     return [{"title": b.title,"summary": b.summary, "content": b.content} for b in blogs]
