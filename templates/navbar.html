@@ -1,0 +1,64 @@
+<div>
+  <nav class="navbar navbar-expand-md navbar-dark main-color fixed-top">
+    <a class="navbar-brand" href="/todos/home">Todo App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <ul class="navbar-nav mr-auto">
+        {% if user %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/todos/todo-page">Todo list</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/blogs/myblog-page">My Blogs</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/blogs/other-blogs">Other Blogs</a>
+          </li>
+         <li class="nav-item active">
+            <a class="nav-link" href="/agent/ai-search-page">Your-{AI}-Patner</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/account/my-account">Account</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/todos/about">About Us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/todos/contect-us">Contact Us</a>
+          </li>
+        {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/blogs/other-blogs">Blogs</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/todos/about">About Us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/todos/contect-us">Contact Us</a>
+          </li>
+        {% endif %}
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
+        <input class="form-control mr-sm-2" type="search" name="query" placeholder="Enter Blog Title" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <ul class="navbar-nav ml-2">
+        {% if user %}
+          <li class="nav-item m-1">
+            <a type="button" class="btn btn-outline-light text-white" onclick="logout()">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item m-1">
+            <a type="button" class="btn btn-outline-light text-white" href="/auth/login-page">Login</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+</div>

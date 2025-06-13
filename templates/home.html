@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="container-fluid bg-dark text-white text-center py-5">
+    <h1 class="display-4">
+<h1 class="display-4 text-center">
+  <span style="color: #e74c3c;">W</span><span style="color: #f39c12;">e</span><span style="color: #f1c40f;">l</span><span style="color: #2ecc71;">c</span><span style="color: #1abc9c;">o</span><span style="color: #3498db;">m</span><span style="color: #9b59b6;">e</span>
+  <span style="color: #34495e;"> </span>
+  <span style="color: #d35400;">t</span><span style="color: #e67e22;">o</span>
+  <span style="color: #34495e;"> </span>
+  <span style="color: #2ecc71;">T</span><span style="color: #e74c3c;">o</span><span style="color: #f1c40f;">d</span><span style="color: #9b59b6;">o</span>
+  <span style="color: #34495e;"> </span>
+  <span style="color: #3498db;">A</span><span style="color: #1abc9c;">p</span><span style="color: #e67e22;">p</span>
+</h1>
+{% if user %}
+
+    <p class="lead">Stay Organized, Productive, and In-Control of your tasks with other's Thoughts and Quotes.</p>
+    <a href="/todos/todo-page" class="btn btn-primary btn-lg mt-3">Let's Go</a>
+
+{% else  %}
+
+    <p class="lead">Stay Organized, Productive, and In-Control of your tasks.</p>
+    <a href="/auth/login-page" class="btn btn-primary btn-lg mt-3">Get Started</a>
+{% endif %}
+</div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 mb-4">
+                <h4>📝 Easy To Use</h4>
+                <p>Create and manage your todos with a simple interface.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 mb-4">
+                <h4>📅 Stay Organized</h4>
+                <p>Track deadlines, mark completed tasks, and sort efficiently.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 mb-4">
+                <h4>📈 Boost Productivity</h4>
+                <p>Improve your daily workflow and focus on what matters.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 mb-4">
+                <h4>📰 Insightful Blogs</h4>
+                <p>Read tips, tutorials, and productivity hacks to level up your task management.</p>
+            </div>
+        </div>
+       <div class="col-md-4">
+            <div class="card shadow-sm p-4 mb-4">
+                <h4>📊 Blog Analysis</h4>
+                <p>Read blogs and analyze the writing style, structure and key ideas to improve your own blogging skills.
+                  
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 mb-4">
+                <h4>🤖 AI Suggestions</h4>
+                <p>Get smart answers supported by DuckDuckGo’s search engine for your queries.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="container-fluid bg-light py-4 text-center">
+    <p class="mb-0">Made with ❤️ by a passionate developer | <a href="https://github.com/harshitjain1099?tab=repositories" target="_blank">GitHub</a></p>
+</div>
+{% endblock %}

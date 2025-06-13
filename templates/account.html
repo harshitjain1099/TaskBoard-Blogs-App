@@ -1,0 +1,51 @@
+{% include 'layout.html' %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow rounded-4 border-0">
+        <div class="card-header bg-gradient-primary text-white rounded-top-4 py-3">
+          <h3 class="mb-0 text-center fw-bold">My Account Details</h3>
+        </div>
+        <div class="card-body p-4">
+          <dl class="row mb-4">
+            <dt class="col-sm-5 text-muted fw-semibold">Username:</dt>
+            <dd class="col-sm-7 fw-medium">{{ user.username }}</dd>
+
+            <dt class="col-sm-5 text-muted fw-semibold">Email:</dt>
+            <dd class="col-sm-7 fw-medium">{{ user.email }}</dd>
+
+            <dt class="col-sm-5 text-muted fw-semibold">First Name:</dt>
+            <dd class="col-sm-7 fw-medium">{{ user.first_name }}</dd>
+
+            <dt class="col-sm-5 text-muted fw-semibold">Last Name:</dt>
+            <dd class="col-sm-7 fw-medium">{{ user.last_name }}</dd>
+
+            <dt class="col-sm-5 text-muted fw-semibold">Role:</dt>
+            <dd class="col-sm-7 fw-medium">{{ user.role }}</dd>
+
+            <dt class="col-sm-5 text-muted fw-semibold">Phone Number:</dt>
+            <dd class="col-sm-7 fw-medium">{{ user.phone_number }}</dd>
+          </dl>
+
+          <div class="d-grid gap-3">
+            <a href="/account/my-account/edit" class="btn btn-primary btn-lg rounded-pill shadow-sm">Edit Details</a>
+            <a href="/account/my-account/change-password" class="btn btn-outline-secondary btn-lg rounded-pill shadow-sm">Change Password</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-gradient-primary {
+    background: linear-gradient(90deg, #4a90e2 0%, #357ABD 100%);
+  }
+  .fw-medium {
+    font-weight: 500;
+  }
+  .fw-semibold {
+    font-weight: 600;
+  }
+</style>

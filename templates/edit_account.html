@@ -1,0 +1,61 @@
+{% include 'layout.html' %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow rounded-4 border-0">
+        <div class="card-header bg-gradient-primary text-white rounded-top-4 py-3">
+          <h3 class="mb-0 text-center fw-bold">Edit Account Details</h3>
+        </div>
+        <div class="card-body p-4">
+          <!-- Form -->
+          <form method="POST" action="/account/my-account/edit">
+            <div class="mb-3">
+              <label for="username" class="form-label fw-semibold">Username</label>
+              <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">Email</label>
+              <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="first_name" class="form-label fw-semibold">First Name</label>
+              <input type="text" class="form-control" id="first_name" name="first_name" value="{{ user.first_name }}" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="last_name" class="form-label fw-semibold">Last Name</label>
+              <input type="text" class="form-control" id="last_name" name="last_name" value="{{ user.last_name }}" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="role" class="form-label fw-semibold">Role</label>
+              <input type="text" class="form-control" id="role" name="role" value="{{ user.role }}" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone_number" class="form-label fw-semibold">Phone Number</label>
+              <input type="tel" class="form-control" id="phone_number" name="phone_number" value="{{ user.phone_number }}">
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <a href="/account/my-account" class="btn btn-outline-secondary rounded-pill px-4">Cancel</a>
+              <button type="submit" class="btn btn-primary rounded-pill px-4">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-gradient-primary {
+    background: linear-gradient(90deg, #4a90e2 0%, #357ABD 100%);
+  }
+  .fw-semibold {
+    font-weight: 600;
+  }
+</style>

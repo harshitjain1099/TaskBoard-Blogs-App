@@ -1,0 +1,34 @@
+{% include 'layout.html' %}
+
+<div class="container mt-5 pt-5">
+    <h2 class="text-center mb-4">Blog's World</h2>
+    <h5 class="text-center text-muted">Discover Yourself in others</h5>
+    <br>
+
+    <div class="row g-4">
+        {% for blog in blogs %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 shadow {% if blog.published %}border-success{% else %}border-secondary{% endif %}">
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">{{ blog.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-truncate">
+                        {{ blog.summary or "No summary available." }}
+                    </h6>
+                    <p class="card-text">
+                        {{ blog.content[:200] | striptags }}{% if blog.content|length > 200 %}...{% endif %}
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <span class="badge {% if blog.published %}bg-success{% else %}bg-secondary{% endif %}">
+                        {% if blog.published %}Published{% else %}Draft{% endif %}
+                    </span>
+                    <div>
+                        
+                        <a href="/blogs/other-blog/{{ blog.id }}" class="btn btn-sm btn-outline-secondary me-2">Read Full Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
